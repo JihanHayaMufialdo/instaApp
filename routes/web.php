@@ -24,3 +24,15 @@ Route::get('/register', function () {
 Route::get('/home', function () {
     return view('web.home-index');
 });
+
+Route::get('/post', function () {
+    return view('web.post-create');
+});
+
+Route::get('/create', function () {
+    return view('web.create-post');
+});
+
+Route::get('/comment', function () {
+    return view('web.comment-create');
+});
