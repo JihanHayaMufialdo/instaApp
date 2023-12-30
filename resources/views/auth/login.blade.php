@@ -15,7 +15,7 @@
                 {{-- @if (session('error'))
                 <x-alert.error-alert message="{{session('error')}}"/>
                 @endif --}}
-                <form class="space-y-4 md:space-y-6" action="" method="POST">
+                <form class="space-y-4 md:space-y-6" action="{{route('login-attempt')}}" method="POST">
                     @csrf
                     <div>
                         <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
@@ -41,9 +41,14 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                        Login
-                    </button>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Login
+                        </button>
+                        <a href="{{ route('register') }}" class="font-small text-blue-600 dark:text-blue-500 hover:underline">
+                            Register
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
